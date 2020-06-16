@@ -95,3 +95,21 @@ document.querySelector('.player-0-panel').classList.add('active')
 document.querySelector('.btn-new').addEventListener('click',function(){
 init();
 });
+
+let modal =document.querySelector('#simple-modal');
+let modalBtn = document.querySelector('.btn-rules');
+
+modalBtn.addEventListener('click',openModal);
+
+function openModal(){
+ modal.style.display='block';   
+}
+
+window.addEventListener('click',outside);
+
+function outside(e){
+    if(e.target === modal)
+{
+    modal.style.display='none';
+}
+}
